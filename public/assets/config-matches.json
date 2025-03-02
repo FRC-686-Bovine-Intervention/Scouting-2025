@@ -1,34 +1,23 @@
 {
-  "heading": "Reefscape - 2025 v1",
+  "heading": "Bovine Intervention Reefscape",
   "logo": "logo.svg",
   "skipTeamSelection": true,
   "pages": [
     {
-      "name": "Setup",
+      "name": "Autonomous",
       "widgets": [
-        {
-          "type": "text",
-          "name": "Scouter Name",
-          "validation": {
-            "comparison": "greater",
-            "value": 0
-          }
-        },
         {
           "type": "dropdown",
           "name": "Starting Position",
+          "defaultOption": true,
           "options": [
-            "None",
             "Own Barge",
             "Center",
             "Opponent's Barge"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Autonomous",
-      "widgets": [
+          ],
+          "align": "center",
+          "colspan": 3
+        },
         {
           "type": "heading",
           "name": "Auto Coral",
@@ -39,38 +28,38 @@
           "type": "heading",
           "name": "Make",
           "align": "center",
-          "row": 2,
+          "row": 3,
           "col": 2
         },
         {
           "type": "heading",
           "name": "Miss",
           "align": "center",
-          "row": 2,
+          "row": 3,
           "col": 3
         },
         {
           "type": "heading",
           "name": "L4",
-          "row": 3,
-          "col": 1
-        },
-        {
-          "type": "heading",
-          "name": "L3",
           "row": 4,
           "col": 1
         },
         {
           "type": "heading",
-          "name": "L2",
+          "name": "L3",
           "row": 5,
           "col": 1
         },
         {
           "type": "heading",
-          "name": "Trough",
+          "name": "L2",
           "row": 6,
+          "col": 1
+        },
+        {
+          "type": "heading",
+          "name": "Trough",
+          "row": 7,
           "col": 1
         },
         {
@@ -79,7 +68,7 @@
           "name": "L4 Make",
           "noLabel": true,
           "align": "center",
-          "row": 3,
+          "row": 4,
           "col": 2
         },
         {
@@ -88,7 +77,7 @@
           "name": "L4 Miss",
           "noLabel": true,
           "align": "center",
-          "row": 3,
+          "row": 4,
           "col": 3
         },
         {
@@ -97,7 +86,7 @@
           "name": "L3 Make",
           "noLabel": true,
           "align": "center",
-          "row": 4,
+          "row": 5,
           "col": 2
         },
         {
@@ -106,7 +95,7 @@
           "name": "L3 Miss",
           "noLabel": true,
           "align": "center",
-          "row": 4,
+          "row": 5,
           "col": 3
         },
         {
@@ -115,7 +104,7 @@
           "name": "L2 Make",
           "noLabel": true,
           "align": "center",
-          "row": 5,
+          "row": 6,
           "col": 2
         },
         {
@@ -124,7 +113,7 @@
           "name": "L2 Miss",
           "noLabel": true,
           "align": "center",
-          "row": 5,
+          "row": 6,
           "col": 3
         },
         {
@@ -133,7 +122,7 @@
           "name": "Trough Make",
           "noLabel": true,
           "align": "center",
-          "row": 6,
+          "row": 7,
           "col": 2
         },
         {
@@ -142,7 +131,7 @@
           "name": "Trough Miss",
           "noLabel": true,
           "align": "center",
-          "row": 6,
+          "row": 7,
           "col": 3
         },
         {
@@ -158,32 +147,32 @@
           "type": "heading",
           "name": "Make",
           "align": "center",
-          "row": 9,
+          "row": 10,
           "col": 2
         },
         {
           "type": "heading",
           "name": "Miss",
           "align": "center",
-          "row": 9,
+          "row": 10,
           "col": 3
         },
         {
           "type": "heading",
           "name": "Removed Algae",
-          "row": 10,
-          "col": 1
-        },
-        {
-          "type": "heading",
-          "name": "Scored Proccesor",
           "row": 11,
           "col": 1
         },
         {
           "type": "heading",
-          "name": "Scored Barge",
+          "name": "Scored Processor",
           "row": 12,
+          "col": 1
+        },
+        {
+          "type": "heading",
+          "name": "Scored Barge",
+          "row": 13,
           "col": 1
         },
         {
@@ -192,7 +181,7 @@
           "name": "Removed Algae Make",
           "noLabel": true,
           "align": "center",
-          "row": 10,
+          "row": 11,
           "col": 2
         },
         {
@@ -201,25 +190,25 @@
           "name": "Removed Algae Miss",
           "noLabel": true,
           "align": "center",
-          "row": 10,
+          "row": 11,
           "col": 3
         },
         {
           "type": "spinbox",
           "prefix": "Auto",
-          "name": "Scored Proccesor Make",
+          "name": "Scored Processor Make",
           "noLabel": true,
           "align": "center",
-          "row": 11,
+          "row": 12,
           "col": 2
         },
         {
           "type": "spinbox",
           "prefix": "Auto",
-          "name": "Scored Proccesor Miss",
+          "name": "Scored Processor Miss",
           "noLabel": true,
           "align": "center",
-          "row": 11,
+          "row": 12,
           "col": 3
         },
         {
@@ -228,7 +217,7 @@
           "name": "Scored Barge Make",
           "noLabel": true,
           "align": "center",
-          "row": 12,
+          "row": 13,
           "col": 2
         },
         {
@@ -237,7 +226,7 @@
           "name": "Scored Barge Miss",
           "noLabel": true,
           "align": "center",
-          "row": 12,
+          "row": 13,
           "col": 3
         }
       ]
@@ -392,7 +381,7 @@
         },
         {
           "type": "heading",
-          "name": "Scored Proccesor",
+          "name": "Scored Processor",
           "row": 11,
           "col": 1
         },
@@ -423,7 +412,7 @@
         {
           "type": "spinbox",
           "prefix": "Tele-Op",
-          "name": "Scored Proccesor Make",
+          "name": "Scored Processor Make",
           "noLabel": true,
           "align": "center",
           "row": 11,
@@ -432,7 +421,7 @@
         {
           "type": "spinbox",
           "prefix": "Tele-Op",
-          "name": "Scored Proccesor Miss",
+          "name": "Scored Processor Miss",
           "noLabel": true,
           "align": "center",
           "row": 11,
@@ -464,6 +453,11 @@
         {
           "type": "dropdown",
           "name": "End Location",
+          "defaultOption": true,
+          "validation": {
+            "comparison": "greaterOrEqual",
+            "value": 0
+          },
           "options": [
             "None",
             "Parked",
@@ -474,6 +468,11 @@
         {
           "type": "dropdown",
           "name": "Attempted Climb",
+          "defaultOption": true,
+          "validation": {
+            "comparison": "greaterOrEqual",
+            "value": 0
+          },
           "options": [
             "No",
             "Shallow (Higher)",
@@ -483,12 +482,17 @@
         {
           "type": "dropdown",
           "name": "Driver Performance",
+          "defaultOption": true,
+          "validation": {
+            "comparison": "greaterOrEqual",
+            "value": 0
+          },
           "options": [
-            "1 - Completely lost, not contributing in any way",
-            "2 - Mostly lost, but had some use",
-            "3 - Decent, they get around, could do better",
-            "4 - Good, slight hesitation, but seemed purposeful",
-            "5 - Fantastic, every move purposeful, wastes no time"
+            "Completely lost, not contributing in any way",
+            "Mostly lost, but had some use",
+            "Decent, they get around, could do better",
+            "Good, slight hesitation, but seemed purposeful",
+            "Fantastic, every move purposeful, wastes no time"
           ]
         },
         {
@@ -516,6 +520,14 @@
         {
           "type": "textarea",
           "name": "Notes"
+        },
+        {
+          "type": "text",
+          "name": "Scouter Name",
+          "validation": {
+            "comparison": "greater",
+            "value": 0
+          }
         }
       ]
     }
