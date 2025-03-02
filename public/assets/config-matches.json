@@ -1,17 +1,27 @@
 {
   "heading": "Reefscape - 2025 v1",
-  "logo": "logo.png",
+  "logo": "logo.svg",
+  "skipTeamSelection": true,
   "pages": [
     {
       "name": "Setup",
       "widgets": [
         {
-         "name": "Starting Position",
+          "type": "text",
+          "name": "Scouter Name",
+          "validation": {
+            "comparison": "greater",
+            "value": 0
+          }
+        },
+        {
           "type": "dropdown",
+          "name": "Starting Position",
           "options": [
+            "None",
+            "Own Barge",
             "Center",
-            "Proccesor Side",
-            "Barge Side"
+            "Opponent's Barge"
           ]
         }
       ]
@@ -20,288 +30,431 @@
       "name": "Autonomous",
       "widgets": [
         {
-          "name": "Left Starting Zone",
-          "type": "checkbox",
-          "col":4
-        },
-        {
-          "type": "spacer",
-          "height": 20
-        },
-        {
-          "name": "Remove Algae",
           "type": "heading",
-          "prefix": "Auto",
-          "col": 2
-        },
-        {
-          "name": "L2.5",
-          "type": "spinbox",
-          "prefix": "Auto",
-          "row": 3,
-          "col": 3
-        },
-        {
-          "name": "L3.5",
-          "type": "spinbox",
-          "prefix": "Auto",
-          "row": 3,
-          "col": 5
-        },
-        {
-          "name": "Scoring Algae",
-          "type": "heading",
-          "col":2
-        },
-        {
-          "name": "Net",
-          "type": "spinbox",
-          "prefix": "Auto",
-          "col": 3,
-          "row": 4
-        },
-        {
-          "name": "Proccesor",
-          "type": "spinbox",
-          "prefix": "Auto",
-          "col": 5,
-          "row" :4
-        },
-        {
-          "name": "Scoring Coral",
-          "type": "heading",
-          "col": 2
-        },
-        {
-          "name": "Trough Corals",
-          "type": "spinbox",
-          "prefix": "Auto",
-          "row": 5,
-          "col": 3
-        },
-        {
-          "name": "L2 Corals",
-          "type": "spinbox",
-          "prefix": "Auto",
-          "row": 5,
-          "col": 5
-        },
-        {
-          "name": "L3 Corals",
-          "type": "spinbox",
-          "prefix": "Auto",
-          "col": 3
-        },
-        {
-          "name": "L4 Corals",
-          "type": "spinbox",
-          "prefix": "Auto",
-          "col": 5,
-          "row": 6
-        },
-        {
-          "name": "Pick-up Locations",
-          "type": "heading",
-          "col": 4
-        },
-        {
-          "name": "Algae",
-          "type": "heading",
-          "col": 2
-        },
-        {
-          "name": "A1",
-          "type": "checkbox",
-          "col": 3,
-          "row": 8
-        },
-        {
-          "name": "A2",
-          "type": "checkbox",
-          "col": 4,
-          "row": 8
-        },
-        {
-          "name": "A3",
-          "type": "checkbox",
-          "col": 6,
-          "row": 8
-        },
-        {
-          "name": "Coral",
-          "type": "heading",
-          "col": 2
-        },
-        {
-          "name": "C1",
-          "type": "checkbox",
-          "col": 3,
-          "row": 9
-        },
-        {
-          "name": "C2",
-          "type": "checkbox",
-          "col": 4,
-          "row": 9
-        },
-        {
-          "name": "C3",
-          "type": "checkbox",
-          "col": 6,
-          "row": 9
-        },
-        {
-          "name": "C Station",
-          "type": "checkbox",
-          "col": 5,
-          "row": 11
-        }
-      ]
-    },
-
-
-    {
-      "name": "Teleop",
-      "widgets": [
-        {
-          "name": "Picked Up From",
-          "type": "heading",
+          "name": "Auto Coral",
           "align": "center",
+          "colspan": 3
+        },
+        {
+          "type": "heading",
+          "name": "Make",
+          "align": "center",
+          "row": 2,
+          "col": 2
+        },
+        {
+          "type": "heading",
+          "name": "Miss",
+          "align": "center",
+          "row": 2,
           "col": 3
         },
         {
-          "name": "Algae",
           "type": "heading",
+          "name": "L4",
+          "row": 3,
+          "col": 1
+        },
+        {
+          "type": "heading",
+          "name": "L3",
+          "row": 4,
+          "col": 1
+        },
+        {
+          "type": "heading",
+          "name": "L2",
+          "row": 5,
+          "col": 1
+        },
+        {
+          "type": "heading",
+          "name": "Trough",
+          "row": 6,
+          "col": 1
+        },
+        {
+          "type": "spinbox",
+          "prefix": "Auto",
+          "name": "L4 Make",
+          "noLabel": true,
           "align": "center",
-          "col": 3,
-          "row":2
+          "row": 3,
+          "col": 2
         },
         {
-          "name": "Ground",
           "type": "spinbox",
-          "col": 1,
-          "row": 3
-        },
-        {
-          "name": "Reef L2.5",
-          "type": "spinbox",
+          "prefix": "Auto",
+          "name": "L4 Miss",
+          "noLabel": true,
+          "align": "center",
           "row": 3,
           "col": 3
         },
         {
-          "name": "Reef L3.5",
           "type": "spinbox",
+          "prefix": "Auto",
+          "name": "L3 Make",
+          "noLabel": true,
+          "align": "center",
           "row": 4,
           "col": 2
         },
         {
-          "name": "Coral",
-          "type": "heading",
+          "type": "spinbox",
+          "prefix": "Auto",
+          "name": "L3 Miss",
+          "noLabel": true,
+          "align": "center",
+          "row": 4,
+          "col": 3
+        },
+        {
+          "type": "spinbox",
+          "prefix": "Auto",
+          "name": "L2 Make",
+          "noLabel": true,
+          "align": "center",
           "row": 5,
-          "col": 3,
-          "align": "center"
+          "col": 2
         },
         {
-          "name": "Ground",
           "type": "spinbox",
-          "col": 1,
-          "row": 6
+          "prefix": "Auto",
+          "name": "L2 Miss",
+          "noLabel": true,
+          "align": "center",
+          "row": 5,
+          "col": 3
         },
         {
-          "name": "Coral Station",
           "type": "spinbox",
+          "prefix": "Auto",
+          "name": "Trough Make",
+          "noLabel": true,
+          "align": "center",
+          "row": 6,
+          "col": 2
+        },
+        {
+          "type": "spinbox",
+          "prefix": "Auto",
+          "name": "Trough Miss",
+          "noLabel": true,
+          "align": "center",
           "row": 6,
           "col": 3
         },
         {
-          "name": "Trough",
-          "type": "spinbox",
-          "row": 7,
-          "col":2
+          "type": "spacer"
         },
-    
         {
-          "name": "Scoring",
           "type": "heading",
+          "name": "Auto Algae",
           "align": "center",
+          "colspan": 3
+        },
+        {
+          "type": "heading",
+          "name": "Make",
+          "align": "center",
+          "row": 9,
+          "col": 2
+        },
+        {
+          "type": "heading",
+          "name": "Miss",
+          "align": "center",
+          "row": 9,
           "col": 3
-    
         },
-
         {
-          "name": "Algae",
           "type": "heading",
-          "row": 9,
-          "col": 1
-
-        },
-        {
-          "name": "Net",
-          "type": "spinbox",
-          "col": 2,
-          "row": 9
-        },
-        {
-          "name": "Proccesor",
-          "type": "spinbox",
-          "row": 9,
-          "col": 4
-
-        },
-
-        {
-          "name": "Coral",
-          "type": "heading",
-          "col": 1,
-          "row": 10
-        },
-        {
-          "name": "Coral Trough",
-          "type": "spinbox",
-          "col": 2,
-          "row": 10
-        },
-        {
-          "name": "Coral L2",
-          "type": "spinbox",
+          "name": "Removed Algae",
           "row": 10,
-          "col": 4
+          "col": 1
         },
         {
-          "name": "Coral L3",
-          "type": "spinbox",
-          "col": 2,
-          "row": 11
-
-        },
-        {
-          "name": "Coral L4",
-          "type": "spinbox",
+          "type": "heading",
+          "name": "Scored Proccesor",
           "row": 11,
-          "col": 4
+          "col": 1
         },
         {
-          "name":"My nono square",
-          "type": "spacer",
-          "height": 15
+          "type": "heading",
+          "name": "Scored Barge",
+          "row": 12,
+          "col": 1
         },
         {
-          "name": "Assists",
-          "type": "checkbox",
-          "col": 2,
-          "align": "center"
-        },
-        {
-          "name": "Rescore",
           "type": "spinbox",
-          "col":2,
-          "align": "center"
+          "prefix": "Auto",
+          "name": "Removed Algae Make",
+          "noLabel": true,
+          "align": "center",
+          "row": 10,
+          "col": 2
         },
         {
-          "name": "Dropped Corals",
           "type": "spinbox",
-          "col": 2,
-          "align": "center"
+          "prefix": "Auto",
+          "name": "Removed Algae Miss",
+          "noLabel": true,
+          "align": "center",
+          "row": 10,
+          "col": 3
+        },
+        {
+          "type": "spinbox",
+          "prefix": "Auto",
+          "name": "Scored Proccesor Make",
+          "noLabel": true,
+          "align": "center",
+          "row": 11,
+          "col": 2
+        },
+        {
+          "type": "spinbox",
+          "prefix": "Auto",
+          "name": "Scored Proccesor Miss",
+          "noLabel": true,
+          "align": "center",
+          "row": 11,
+          "col": 3
+        },
+        {
+          "type": "spinbox",
+          "prefix": "Auto",
+          "name": "Scored Barge Make",
+          "noLabel": true,
+          "align": "center",
+          "row": 12,
+          "col": 2
+        },
+        {
+          "type": "spinbox",
+          "prefix": "Auto",
+          "name": "Scored Barge Miss",
+          "noLabel": true,
+          "align": "center",
+          "row": 12,
+          "col": 3
+        }
+      ]
+    },
+    {
+      "name": "Tele-Op",
+      "widgets": [
+        {
+          "type": "heading",
+          "name": "Tele-Op Coral",
+          "align": "center",
+          "colspan": 3
+        },
+        {
+          "type": "heading",
+          "name": "Make",
+          "align": "center",
+          "row": 2,
+          "col": 2
+        },
+        {
+          "type": "heading",
+          "name": "Miss",
+          "align": "center",
+          "row": 2,
+          "col": 3
+        },
+        {
+          "type": "heading",
+          "name": "L4",
+          "row": 3,
+          "col": 1
+        },
+        {
+          "type": "heading",
+          "name": "L3",
+          "row": 4,
+          "col": 1
+        },
+        {
+          "type": "heading",
+          "name": "L2",
+          "row": 5,
+          "col": 1
+        },
+        {
+          "type": "heading",
+          "name": "Trough",
+          "row": 6,
+          "col": 1
+        },
+        {
+          "type": "spinbox",
+          "prefix": "Tele-Op",
+          "name": "L4 Make",
+          "noLabel": true,
+          "align": "center",
+          "row": 3,
+          "col": 2
+        },
+        {
+          "type": "spinbox",
+          "prefix": "Tele-Op",
+          "name": "L4 Miss",
+          "noLabel": true,
+          "align": "center",
+          "row": 3,
+          "col": 3
+        },
+        {
+          "type": "spinbox",
+          "prefix": "Tele-Op",
+          "name": "L3 Make",
+          "noLabel": true,
+          "align": "center",
+          "row": 4,
+          "col": 2
+        },
+        {
+          "type": "spinbox",
+          "prefix": "Tele-Op",
+          "name": "L3 Miss",
+          "noLabel": true,
+          "align": "center",
+          "row": 4,
+          "col": 3
+        },
+        {
+          "type": "spinbox",
+          "prefix": "Tele-Op",
+          "name": "L2 Make",
+          "noLabel": true,
+          "align": "center",
+          "row": 5,
+          "col": 2
+        },
+        {
+          "type": "spinbox",
+          "prefix": "Tele-Op",
+          "name": "L2 Miss",
+          "noLabel": true,
+          "align": "center",
+          "row": 5,
+          "col": 3
+        },
+        {
+          "type": "spinbox",
+          "prefix": "Tele-Op",
+          "name": "Trough Make",
+          "noLabel": true,
+          "align": "center",
+          "row": 6,
+          "col": 2
+        },
+        {
+          "type": "spinbox",
+          "prefix": "Tele-Op",
+          "name": "Trough Miss",
+          "noLabel": true,
+          "align": "center",
+          "row": 6,
+          "col": 3
+        },
+        {
+          "type": "spacer"
+        },
+        {
+          "type": "heading",
+          "name": "Tele-Op Algae",
+          "align": "center",
+          "colspan": 3
+        },
+        {
+          "type": "heading",
+          "name": "Make",
+          "align": "center",
+          "row": 9,
+          "col": 2
+        },
+        {
+          "type": "heading",
+          "name": "Miss",
+          "align": "center",
+          "row": 9,
+          "col": 3
+        },
+        {
+          "type": "heading",
+          "name": "Removed Algae",
+          "row": 10,
+          "col": 1
+        },
+        {
+          "type": "heading",
+          "name": "Scored Proccesor",
+          "row": 11,
+          "col": 1
+        },
+        {
+          "type": "heading",
+          "name": "Scored Barge",
+          "row": 12,
+          "col": 1
+        },
+        {
+          "type": "spinbox",
+          "prefix": "Tele-Op",
+          "name": "Removed Algae Make",
+          "noLabel": true,
+          "align": "center",
+          "row": 10,
+          "col": 2
+        },
+        {
+          "type": "spinbox",
+          "prefix": "Tele-Op",
+          "name": "Removed Algae Miss",
+          "noLabel": true,
+          "align": "center",
+          "row": 10,
+          "col": 3
+        },
+        {
+          "type": "spinbox",
+          "prefix": "Tele-Op",
+          "name": "Scored Proccesor Make",
+          "noLabel": true,
+          "align": "center",
+          "row": 11,
+          "col": 2
+        },
+        {
+          "type": "spinbox",
+          "prefix": "Tele-Op",
+          "name": "Scored Proccesor Miss",
+          "noLabel": true,
+          "align": "center",
+          "row": 11,
+          "col": 3
+        },
+        {
+          "type": "spinbox",
+          "prefix": "Tele-Op",
+          "name": "Scored Barge Make",
+          "noLabel": true,
+          "align": "center",
+          "row": 12,
+          "col": 2
+        },
+        {
+          "type": "spinbox",
+          "prefix": "Tele-Op",
+          "name": "Scored Barge Miss",
+          "noLabel": true,
+          "align": "center",
+          "row": 12,
+          "col": 3
         }
       ]
     },
@@ -309,48 +462,61 @@
       "name": "Endgame",
       "widgets": [
         {
+          "type": "dropdown",
           "name": "End Location",
-          "type": "radio",
           "options": [
-            "Deep",
-            "Shallow",
+            "None",
             "Parked",
-            "None"
-          ],
-          "default": 3
+            "Shallow (Higher)",
+            "Deep (Lower)"
+          ]
         },
         {
-          "name": "Failed Climb",
-          "type": "checkbox"
-        },
-        {
-          "name": "Robot Position",
-          "type": "radio",
+          "type": "dropdown",
+          "name": "Attempted Climb",
           "options": [
-            "1",
-            "2",
-            "3",
-            "None"
-          ],
-          "default": 3
+            "No",
+            "Shallow (Higher)",
+            "Deep (Lower)"
+          ]
         },
         {
-          "name": "Barge RP",
-          "type": "checkbox"
+          "type": "dropdown",
+          "name": "Driver Performance",
+          "options": [
+            "1 - Completely lost, not contributing in any way",
+            "2 - Mostly lost, but had some use",
+            "3 - Decent, they get around, could do better",
+            "4 - Good, slight hesitation, but seemed purposeful",
+            "5 - Fantastic, every move purposeful, wastes no time"
+          ]
         },
-
         {
-          "name": "Mechanical Failures",
-          "type": "text"
+          "type": "dropdown",
+          "name": "Did They PLAY Defense? How Effective?",
+          "options": [
+            "No",
+            "Completely Ineffective",
+            "Barely Effective",
+            "Fairly Effective",
+            "Very Effective"
+          ]
         },
         {
-        "name": "Scouter Name",
-          "type": "text",
-          "validation": {
-            "comparison": "greater",
-            "value": 0
+          "type": "dropdown",
+          "name": "Was Defense Played ON Them? How Effective?",
+          "options": [
+            "None",
+            "Completely Ineffective",
+            "Barely Effective",
+            "Fairly Effective",
+            "Very Effective"
+          ]
+        },
+        {
+          "type": "textarea",
+          "name": "Notes"
         }
-      }
       ]
     }
   ]
