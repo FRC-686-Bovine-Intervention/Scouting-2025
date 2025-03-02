@@ -28,6 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       VITE_TBA_API_KEY: ${{ secrets.TBA_KEY }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
     steps:
     - uses: actions/checkout@v4
     - name: Setup Node
@@ -36,7 +37,9 @@ jobs:
         node-version: "20"
         cache: "npm"
     - run: npm ci
-    - run: npm run build -- --base=/${{ github.event.repository.name }}/
+    - run: npm run build
+    - name: Create 404.html
+      run: cp dist/index.html dist/404.html
     - name: Remove symlinks (if any)
       run: find ./dist -type l -exec rm -f {} +
     - name: Upload artifact
@@ -46,7 +49,7 @@ jobs:
         path: ./dist
 
   # Deployment job
-    deploy:
+  deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

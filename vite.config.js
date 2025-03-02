@@ -50,7 +50,19 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
+      '@': path.resolve(__dirname, './src'),
     },
-  }
+  },
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
+  },
+  base: process.env.NODE_ENV === 'production' 
+    ? `/${process.env.GITHUB_REPOSITORY?.split('/')[1] || 'Scouting-2025'}/` 
+    : '/',
 });
