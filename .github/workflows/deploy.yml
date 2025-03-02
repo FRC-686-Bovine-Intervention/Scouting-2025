@@ -28,7 +28,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       VITE_TBA_API_KEY: ${{ secrets.TBA_KEY }}
-      GITHUB_REPOSITORY: ${{ github.repository }}
     steps:
     - uses: actions/checkout@v4
     - name: Setup Node
@@ -37,11 +36,22 @@ jobs:
         node-version: "20"
         cache: "npm"
     - run: npm ci
-    - run: npm run build
+    
+    # Explicitly set the base with the repository name
+    - name: Build
+      run: npm run build -- --base=/${{ github.event.repository.name }}/
+    
+    # Create a .nojekyll file to prevent GitHub Pages from ignoring files that begin with an underscore
+    - name: Add .nojekyll file
+      run: touch ./dist/.nojekyll
+    
+    # Create 404.html that matches index.html for SPA routing
     - name: Create 404.html
-      run: cp dist/index.html dist/404.html
+      run: cp ./dist/index.html ./dist/404.html
+    
     - name: Remove symlinks (if any)
       run: find ./dist -type l -exec rm -f {} +
+    
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
