@@ -528,6 +528,14 @@
             "comparison": "greater",
             "value": 0
           }
+        },
+        {
+          "type": "number",
+          "name": "Team Number",
+          "validation": {
+            "comparison": "greater",
+            "value": 0
+          }
         }
       ]
     }
