@@ -1,7 +1,6 @@
 {
   "heading": "Bovine Intervention Reefscape",
   "logo": "logo.svg",
-  "skipTeamSelection": true,
   "pages": [
     {
       "name": "Autonomous",
