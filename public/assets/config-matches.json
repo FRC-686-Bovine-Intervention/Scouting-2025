@@ -451,31 +451,18 @@
       "widgets": [
         {
           "type": "dropdown",
-          "name": "End Location",
+          "name": "Climbing",
           "defaultOption": true,
           "validation": {
             "comparison": "greaterOrEqual",
             "value": 0
           },
           "options": [
-            "None",
-            "Parked",
-            "Shallow (Higher)",
-            "Deep (Lower)"
-          ]
-        },
-        {
-          "type": "dropdown",
-          "name": "Attempted Climb",
-          "defaultOption": true,
-          "validation": {
-            "comparison": "greaterOrEqual",
-            "value": 0
-          },
-          "options": [
-            "No",
-            "Shallow (Higher)",
-            "Deep (Lower)"
+            "No Attempt",
+            "Failed Shallow (Higher Cage)",
+            "Failed Deep (Lower Cage)",
+            "Successful Shallow (Higher Cage)",
+            "Successful Deep (Lower Cage)"
           ]
         },
         {
